@@ -1,0 +1,39 @@
+[project]
+name = "solo2social"
+version = "0.1.0"
+description = "Self-interested agents learning independently and from peers"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.2.6", "pandas==3.0.3", "scipy>=1.14",
+    "matplotlib==3.11.0", "seaborn==0.13.2", "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+evolution = [
+    "certifi>=2024.2",
+    "ifbench @ git+https://github.com/allenai/IFBench.git@1c40f0c10d9b5c5c2f10a175a28007ebb64f7f4d",
+    "openevolve @ git+https://github.com/algorithmicsuperintelligence/openevolve.git@411fb59c886c18704caaffb611e17cf9e7d824d2",
+]
+vllm = [
+    "openai-harmony==0.0.8", "transformers==5.5.1", "vllm==0.23.0",
+    "torch==2.11.0", "torchvision==0.26.0", "torchaudio==2.11.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cu130", marker = "sys_platform == 'linux'" }]
+torchaudio = [{ index = "pytorch-cu130", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.pytest.ini_options]
+pythonpath = ["code", "analysis"]
+testpaths = ["tests"]

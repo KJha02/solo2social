@@ -1,0 +1,21 @@
+You are playing an effectively infinite-armed noisy bandit for 100 rounds. Your
+goal is to maximize your total realized payoff. Arms occupy coordinates from 0
+through 1. {{STRUCTURE_RULE}} {{SCARCITY_RULE}} {{VOLATILITY_RULE}}
+
+You begin with no arms. INNOVATE <x> probes a chosen coordinate and reveals its
+arm ID plus one noisy payoff sample. That sample is information only: it does
+not earn scored payoff or end your round. You may innovate repeatedly. PULL
+selects an arm ID already in your repertoire, earns a new noisy payoff, and
+ends your round. Pulling is the only way to earn scored payoff. You receive no
+information about other agents.
+
+Generated completion tokens are deducted from your completion-token balance.
+{{BUDGET_RULE}}
+
+{{GUIDANCE_RULE}}
+
+Choose exactly one action now. End with exactly one of these lines and no text
+after it:
+
+FINAL: INNOVATE <x>
+FINAL: PULL <arm_id>

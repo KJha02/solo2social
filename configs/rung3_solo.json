@@ -1,0 +1,35 @@
+{
+  "rung": 3,
+  "condition": "rung3_solo",
+  "strategy": "solo",
+  "model_label": "qwen3_32b",
+  "policy": "solo_llm",
+  "social_info": "none",
+  "prompt": "prompts/rung3_policy.txt",
+  "output_root": "runs/rung3",
+  "environment": {
+    "num_agents": 100,
+    "rounds": 100,
+    "num_jobs": 16,
+    "max_deadline": 8,
+    "profit_min": 1,
+    "profit_max": 100
+  },
+  "budget": {
+    "tokens_per_round": 8192
+  },
+  "model": {
+    "name": "Qwen/Qwen3-32B",
+    "tensor_parallel_size": 2,
+    "dtype": "bfloat16",
+    "max_model_len": 32768,
+    "gpu_memory_utilization": 0.9,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0,
+    "chat_template_kwargs": {
+      "enable_thinking": true
+    }
+  }
+}

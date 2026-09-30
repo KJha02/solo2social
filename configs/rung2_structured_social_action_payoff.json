@@ -1,0 +1,39 @@
+{
+  "rung": 2,
+  "condition": "rung2_structured_social_action_payoff",
+  "strategy": "social_action_payoff",
+  "model_label": "qwen3_32b",
+  "policy": "social_llm",
+  "observe_payoff": true,
+  "prompt": "prompts/rung2_structured_social.txt",
+  "output_root": "runs/rung2",
+  "environment": {
+    "landscape": "structured",
+    "num_agents": 100,
+    "rounds": 100,
+    "arm_mean_scale": 1,
+    "reward_noise_std": 1,
+    "coordinate_decimals": 9,
+    "structured_features": 32,
+    "structured_length_scale": 0.15,
+    "reference_grid_size": 100001
+  },
+  "budget": {
+    "tokens_per_round": 4096,
+    "max_tokens_per_decision": 4096
+  },
+  "model": {
+    "name": "Qwen/Qwen3-32B",
+    "tensor_parallel_size": 2,
+    "dtype": "bfloat16",
+    "max_model_len": 32768,
+    "gpu_memory_utilization": 0.9,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0,
+    "chat_template_kwargs": {
+      "enable_thinking": true
+    }
+  }
+}

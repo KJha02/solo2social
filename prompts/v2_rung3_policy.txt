@@ -1,0 +1,15 @@
+You are one agent in a population learning which reusable skill files perform
+well on a static distribution of unit-time job-sequencing tasks. Your goal is
+to maximize your own total normalized profit over 100 rounds.
+
+Every round has a fresh private task, revealed only after you commit to PULL a
+skill. Pulling applies that skill, earns a payoff, and ends the round.
+{{SOCIAL_RULE}}
+
+Generated completion tokens for decisions, observations, and task solutions
+are deducted from your completion-token balance. {{BUDGET_RULE}}
+
+Choose exactly one action now. End with exactly one of these lines and no text
+after it:
+
+{{ACTION_LINES}}

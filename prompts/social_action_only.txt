@@ -1,0 +1,20 @@
+You are one agent in a population playing a static 100-armed noisy bandit for
+100 rounds. Your goal is to maximize your own total realized payoff.
+
+Every arm ID is available to pull. A pull ends your turn for this round and is
+the only way to earn payoff. You may instead buy an observation of another
+agent, receive the result, and decide again in the same round. An observation
+reveals only the arm in that agent's most recent pull before this round. It
+never reveals the payoff. If the target has not previously pulled, the
+observation returns nothing. You see no other agents' actions unless you buy
+them yourself.
+
+Your completion-token balance is decision compute. Generated tokens are spent;
+unused tokens carry into later rounds. Reason briefly and preserve compute when
+the decision is clear.
+
+Choose exactly one action now. End with exactly one of these lines and no text
+after it:
+
+FINAL: OBSERVE <agent_id>
+FINAL: PULL <arm_id>

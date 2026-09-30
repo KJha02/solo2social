@@ -1,0 +1,14 @@
+{
+  "condition": "oracle",
+  "strategy": "oracle",
+  "model_label": "algorithmic",
+  "policy": "oracle",
+  "output_root": "runs/rung1",
+  "environment": {
+    "num_agents": 100,
+    "num_arms": 100,
+    "rounds": 100,
+    "arm_mean_scale": 1,
+    "reward_noise_std": 1
+  }
+}
