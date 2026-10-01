@@ -151,3 +151,8 @@ agent. Matched-cost comparisons interpolate each pair's observed performance
 against total population expenditure; reward divided by tokens is a different
 metric. Tests never feed back into skill evolution. Peer lists retain the fixed
 ordering used in the paper—this release does not silently change that design.
+
+## License
+
+This project is released under the [MIT License](LICENSE). Third-party
+dependencies, datasets, and model weights retain their respective licenses.
